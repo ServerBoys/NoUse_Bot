@@ -1,0 +1,1717 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> calc
+Rule 1     calc -> expression
+Rule 2     calc -> empty
+Rule 3     expression -> expression POWER expression
+Rule 4     expression -> expression MULTIPLY expression
+Rule 5     expression -> expression DIVIDE expression
+Rule 6     expression -> expression PLUS expression
+Rule 7     expression -> expression MINUS expression
+Rule 8     expression -> MINUS expression
+Rule 9     expression -> ROOT expression
+Rule 10    expression -> expression POWERS
+Rule 11    expression -> SB_OPEN expression SB_CLOSE expression
+Rule 12    expression -> SB_OPEN expression SB_CLOSE
+Rule 13    expression -> expression SB_OPEN expression SB_CLOSE
+Rule 14    expression -> MB_OPEN expression MB_CLOSE expression
+Rule 15    expression -> MB_OPEN expression MB_CLOSE
+Rule 16    expression -> expression MB_OPEN expression MB_CLOSE
+Rule 17    expression -> BB_OPEN expression BB_CLOSE expression
+Rule 18    expression -> BB_OPEN expression BB_CLOSE
+Rule 19    expression -> expression BB_OPEN expression BB_CLOSE
+Rule 20    expression -> INT
+Rule 21    expression -> FLOAT
+Rule 22    expression -> CONSTANTS
+Rule 23    expression -> expression CONSTANTS
+Rule 24    expression -> FUNCTIONS expression
+Rule 25    expression -> FUNCTIONS POWERS expression
+Rule 26    empty -> <empty>
+
+Terminals, with rules where they appear
+
+BB_CLOSE             : 17 18 19
+BB_OPEN              : 17 18 19
+CONSTANTS            : 22 23
+DIVIDE               : 5
+FLOAT                : 21
+FUNCTIONS            : 24 25
+INT                  : 20
+MB_CLOSE             : 14 15 16
+MB_OPEN              : 14 15 16
+MINUS                : 7 8
+MULTIPLY             : 4
+PLUS                 : 6
+POWER                : 3
+POWERS               : 10 25
+ROOT                 : 9
+SB_CLOSE             : 11 12 13
+SB_OPEN              : 11 12 13
+error                : 
+
+Nonterminals, with rules where they appear
+
+calc                 : 0
+empty                : 2
+expression           : 1 3 3 4 4 5 5 6 6 7 7 8 9 10 11 11 12 13 13 14 14 15 16 16 17 17 18 19 19 23 24 25
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . calc
+    (1) calc -> . expression
+    (2) calc -> . empty
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+    (26) empty -> .
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+    $end            reduce using rule 26 (empty -> .)
+
+    calc                           shift and go to state 1
+    expression                     shift and go to state 2
+    empty                          shift and go to state 3
+
+state 1
+
+    (0) S' -> calc .
+
+
+
+state 2
+
+    (1) calc -> expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    $end            reduce using rule 1 (calc -> expression .)
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 3
+
+    (2) calc -> empty .
+
+    $end            reduce using rule 2 (calc -> empty .)
+
+
+state 4
+
+    (8) expression -> MINUS . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 23
+
+state 5
+
+    (9) expression -> ROOT . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 24
+
+state 6
+
+    (11) expression -> SB_OPEN . expression SB_CLOSE expression
+    (12) expression -> SB_OPEN . expression SB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 25
+
+state 7
+
+    (14) expression -> MB_OPEN . expression MB_CLOSE expression
+    (15) expression -> MB_OPEN . expression MB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 26
+
+state 8
+
+    (17) expression -> BB_OPEN . expression BB_CLOSE expression
+    (18) expression -> BB_OPEN . expression BB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 27
+
+state 9
+
+    (20) expression -> INT .
+
+    POWER           reduce using rule 20 (expression -> INT .)
+    MULTIPLY        reduce using rule 20 (expression -> INT .)
+    DIVIDE          reduce using rule 20 (expression -> INT .)
+    PLUS            reduce using rule 20 (expression -> INT .)
+    MINUS           reduce using rule 20 (expression -> INT .)
+    POWERS          reduce using rule 20 (expression -> INT .)
+    SB_OPEN         reduce using rule 20 (expression -> INT .)
+    MB_OPEN         reduce using rule 20 (expression -> INT .)
+    BB_OPEN         reduce using rule 20 (expression -> INT .)
+    CONSTANTS       reduce using rule 20 (expression -> INT .)
+    $end            reduce using rule 20 (expression -> INT .)
+    SB_CLOSE        reduce using rule 20 (expression -> INT .)
+    MB_CLOSE        reduce using rule 20 (expression -> INT .)
+    BB_CLOSE        reduce using rule 20 (expression -> INT .)
+
+
+state 10
+
+    (21) expression -> FLOAT .
+
+    POWER           reduce using rule 21 (expression -> FLOAT .)
+    MULTIPLY        reduce using rule 21 (expression -> FLOAT .)
+    DIVIDE          reduce using rule 21 (expression -> FLOAT .)
+    PLUS            reduce using rule 21 (expression -> FLOAT .)
+    MINUS           reduce using rule 21 (expression -> FLOAT .)
+    POWERS          reduce using rule 21 (expression -> FLOAT .)
+    SB_OPEN         reduce using rule 21 (expression -> FLOAT .)
+    MB_OPEN         reduce using rule 21 (expression -> FLOAT .)
+    BB_OPEN         reduce using rule 21 (expression -> FLOAT .)
+    CONSTANTS       reduce using rule 21 (expression -> FLOAT .)
+    $end            reduce using rule 21 (expression -> FLOAT .)
+    SB_CLOSE        reduce using rule 21 (expression -> FLOAT .)
+    MB_CLOSE        reduce using rule 21 (expression -> FLOAT .)
+    BB_CLOSE        reduce using rule 21 (expression -> FLOAT .)
+
+
+state 11
+
+    (22) expression -> CONSTANTS .
+
+    POWER           reduce using rule 22 (expression -> CONSTANTS .)
+    MULTIPLY        reduce using rule 22 (expression -> CONSTANTS .)
+    DIVIDE          reduce using rule 22 (expression -> CONSTANTS .)
+    PLUS            reduce using rule 22 (expression -> CONSTANTS .)
+    MINUS           reduce using rule 22 (expression -> CONSTANTS .)
+    POWERS          reduce using rule 22 (expression -> CONSTANTS .)
+    SB_OPEN         reduce using rule 22 (expression -> CONSTANTS .)
+    MB_OPEN         reduce using rule 22 (expression -> CONSTANTS .)
+    BB_OPEN         reduce using rule 22 (expression -> CONSTANTS .)
+    CONSTANTS       reduce using rule 22 (expression -> CONSTANTS .)
+    $end            reduce using rule 22 (expression -> CONSTANTS .)
+    SB_CLOSE        reduce using rule 22 (expression -> CONSTANTS .)
+    MB_CLOSE        reduce using rule 22 (expression -> CONSTANTS .)
+    BB_CLOSE        reduce using rule 22 (expression -> CONSTANTS .)
+
+
+state 12
+
+    (24) expression -> FUNCTIONS . expression
+    (25) expression -> FUNCTIONS . POWERS expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    POWERS          shift and go to state 29
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 28
+
+state 13
+
+    (3) expression -> expression POWER . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 30
+
+state 14
+
+    (4) expression -> expression MULTIPLY . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 31
+
+state 15
+
+    (5) expression -> expression DIVIDE . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 32
+
+state 16
+
+    (6) expression -> expression PLUS . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 33
+
+state 17
+
+    (7) expression -> expression MINUS . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 34
+
+state 18
+
+    (10) expression -> expression POWERS .
+
+    POWER           reduce using rule 10 (expression -> expression POWERS .)
+    MULTIPLY        reduce using rule 10 (expression -> expression POWERS .)
+    DIVIDE          reduce using rule 10 (expression -> expression POWERS .)
+    PLUS            reduce using rule 10 (expression -> expression POWERS .)
+    MINUS           reduce using rule 10 (expression -> expression POWERS .)
+    POWERS          reduce using rule 10 (expression -> expression POWERS .)
+    SB_OPEN         reduce using rule 10 (expression -> expression POWERS .)
+    MB_OPEN         reduce using rule 10 (expression -> expression POWERS .)
+    BB_OPEN         reduce using rule 10 (expression -> expression POWERS .)
+    CONSTANTS       reduce using rule 10 (expression -> expression POWERS .)
+    $end            reduce using rule 10 (expression -> expression POWERS .)
+    SB_CLOSE        reduce using rule 10 (expression -> expression POWERS .)
+    MB_CLOSE        reduce using rule 10 (expression -> expression POWERS .)
+    BB_CLOSE        reduce using rule 10 (expression -> expression POWERS .)
+
+
+state 19
+
+    (13) expression -> expression SB_OPEN . expression SB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 35
+
+state 20
+
+    (16) expression -> expression MB_OPEN . expression MB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 36
+
+state 21
+
+    (19) expression -> expression BB_OPEN . expression BB_CLOSE
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 37
+
+state 22
+
+    (23) expression -> expression CONSTANTS .
+
+    POWER           reduce using rule 23 (expression -> expression CONSTANTS .)
+    MULTIPLY        reduce using rule 23 (expression -> expression CONSTANTS .)
+    DIVIDE          reduce using rule 23 (expression -> expression CONSTANTS .)
+    PLUS            reduce using rule 23 (expression -> expression CONSTANTS .)
+    MINUS           reduce using rule 23 (expression -> expression CONSTANTS .)
+    POWERS          reduce using rule 23 (expression -> expression CONSTANTS .)
+    SB_OPEN         reduce using rule 23 (expression -> expression CONSTANTS .)
+    MB_OPEN         reduce using rule 23 (expression -> expression CONSTANTS .)
+    BB_OPEN         reduce using rule 23 (expression -> expression CONSTANTS .)
+    CONSTANTS       reduce using rule 23 (expression -> expression CONSTANTS .)
+    $end            reduce using rule 23 (expression -> expression CONSTANTS .)
+    SB_CLOSE        reduce using rule 23 (expression -> expression CONSTANTS .)
+    MB_CLOSE        reduce using rule 23 (expression -> expression CONSTANTS .)
+    BB_CLOSE        reduce using rule 23 (expression -> expression CONSTANTS .)
+
+
+state 23
+
+    (8) expression -> MINUS expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    PLUS            reduce using rule 8 (expression -> MINUS expression .)
+    MINUS           reduce using rule 8 (expression -> MINUS expression .)
+    $end            reduce using rule 8 (expression -> MINUS expression .)
+    SB_CLOSE        reduce using rule 8 (expression -> MINUS expression .)
+    MB_CLOSE        reduce using rule 8 (expression -> MINUS expression .)
+    BB_CLOSE        reduce using rule 8 (expression -> MINUS expression .)
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! POWER           [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! MULTIPLY        [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! POWERS          [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! SB_OPEN         [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! MB_OPEN         [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! BB_OPEN         [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! CONSTANTS       [ reduce using rule 8 (expression -> MINUS expression .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+
+
+state 24
+
+    (9) expression -> ROOT expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 9 (expression -> ROOT expression .)
+    MULTIPLY        reduce using rule 9 (expression -> ROOT expression .)
+    DIVIDE          reduce using rule 9 (expression -> ROOT expression .)
+    PLUS            reduce using rule 9 (expression -> ROOT expression .)
+    MINUS           reduce using rule 9 (expression -> ROOT expression .)
+    POWERS          reduce using rule 9 (expression -> ROOT expression .)
+    $end            reduce using rule 9 (expression -> ROOT expression .)
+    SB_CLOSE        reduce using rule 9 (expression -> ROOT expression .)
+    MB_CLOSE        reduce using rule 9 (expression -> ROOT expression .)
+    BB_CLOSE        reduce using rule 9 (expression -> ROOT expression .)
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! SB_OPEN         [ reduce using rule 9 (expression -> ROOT expression .) ]
+  ! MB_OPEN         [ reduce using rule 9 (expression -> ROOT expression .) ]
+  ! BB_OPEN         [ reduce using rule 9 (expression -> ROOT expression .) ]
+  ! CONSTANTS       [ reduce using rule 9 (expression -> ROOT expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+
+
+state 25
+
+    (11) expression -> SB_OPEN expression . SB_CLOSE expression
+    (12) expression -> SB_OPEN expression . SB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    SB_CLOSE        shift and go to state 38
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 26
+
+    (14) expression -> MB_OPEN expression . MB_CLOSE expression
+    (15) expression -> MB_OPEN expression . MB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    MB_CLOSE        shift and go to state 39
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 27
+
+    (17) expression -> BB_OPEN expression . BB_CLOSE expression
+    (18) expression -> BB_OPEN expression . BB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    BB_CLOSE        shift and go to state 40
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 28
+
+    (24) expression -> FUNCTIONS expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 24 (expression -> FUNCTIONS expression .)
+    MULTIPLY        reduce using rule 24 (expression -> FUNCTIONS expression .)
+    DIVIDE          reduce using rule 24 (expression -> FUNCTIONS expression .)
+    PLUS            reduce using rule 24 (expression -> FUNCTIONS expression .)
+    MINUS           reduce using rule 24 (expression -> FUNCTIONS expression .)
+    POWERS          reduce using rule 24 (expression -> FUNCTIONS expression .)
+    SB_OPEN         reduce using rule 24 (expression -> FUNCTIONS expression .)
+    MB_OPEN         reduce using rule 24 (expression -> FUNCTIONS expression .)
+    BB_OPEN         reduce using rule 24 (expression -> FUNCTIONS expression .)
+    CONSTANTS       reduce using rule 24 (expression -> FUNCTIONS expression .)
+    $end            reduce using rule 24 (expression -> FUNCTIONS expression .)
+    SB_CLOSE        reduce using rule 24 (expression -> FUNCTIONS expression .)
+    MB_CLOSE        reduce using rule 24 (expression -> FUNCTIONS expression .)
+    BB_CLOSE        reduce using rule 24 (expression -> FUNCTIONS expression .)
+
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+  ! SB_OPEN         [ shift and go to state 19 ]
+  ! MB_OPEN         [ shift and go to state 20 ]
+  ! BB_OPEN         [ shift and go to state 21 ]
+  ! CONSTANTS       [ shift and go to state 22 ]
+
+
+state 29
+
+    (25) expression -> FUNCTIONS POWERS . expression
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    MINUS           shift and go to state 4
+    ROOT            shift and go to state 5
+    SB_OPEN         shift and go to state 6
+    MB_OPEN         shift and go to state 7
+    BB_OPEN         shift and go to state 8
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+    expression                     shift and go to state 41
+
+state 30
+
+    (3) expression -> expression POWER expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 3 (expression -> expression POWER expression .)
+    MULTIPLY        reduce using rule 3 (expression -> expression POWER expression .)
+    DIVIDE          reduce using rule 3 (expression -> expression POWER expression .)
+    PLUS            reduce using rule 3 (expression -> expression POWER expression .)
+    MINUS           reduce using rule 3 (expression -> expression POWER expression .)
+    POWERS          reduce using rule 3 (expression -> expression POWER expression .)
+    $end            reduce using rule 3 (expression -> expression POWER expression .)
+    SB_CLOSE        reduce using rule 3 (expression -> expression POWER expression .)
+    MB_CLOSE        reduce using rule 3 (expression -> expression POWER expression .)
+    BB_CLOSE        reduce using rule 3 (expression -> expression POWER expression .)
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! SB_OPEN         [ reduce using rule 3 (expression -> expression POWER expression .) ]
+  ! MB_OPEN         [ reduce using rule 3 (expression -> expression POWER expression .) ]
+  ! BB_OPEN         [ reduce using rule 3 (expression -> expression POWER expression .) ]
+  ! CONSTANTS       [ reduce using rule 3 (expression -> expression POWER expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+
+
+state 31
+
+    (4) expression -> expression MULTIPLY expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    MULTIPLY        reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    DIVIDE          reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    PLUS            reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    MINUS           reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    $end            reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    SB_CLOSE        reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    MB_CLOSE        reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    BB_CLOSE        reduce using rule 4 (expression -> expression MULTIPLY expression .)
+    POWER           shift and go to state 13
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! POWER           [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! POWERS          [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! SB_OPEN         [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! MB_OPEN         [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! BB_OPEN         [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! CONSTANTS       [ reduce using rule 4 (expression -> expression MULTIPLY expression .) ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+
+
+state 32
+
+    (5) expression -> expression DIVIDE expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    MULTIPLY        reduce using rule 5 (expression -> expression DIVIDE expression .)
+    DIVIDE          reduce using rule 5 (expression -> expression DIVIDE expression .)
+    PLUS            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MINUS           reduce using rule 5 (expression -> expression DIVIDE expression .)
+    $end            reduce using rule 5 (expression -> expression DIVIDE expression .)
+    SB_CLOSE        reduce using rule 5 (expression -> expression DIVIDE expression .)
+    MB_CLOSE        reduce using rule 5 (expression -> expression DIVIDE expression .)
+    BB_CLOSE        reduce using rule 5 (expression -> expression DIVIDE expression .)
+    POWER           shift and go to state 13
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! POWER           [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! POWERS          [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! SB_OPEN         [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! MB_OPEN         [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! BB_OPEN         [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! CONSTANTS       [ reduce using rule 5 (expression -> expression DIVIDE expression .) ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+
+
+state 33
+
+    (6) expression -> expression PLUS expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    PLUS            reduce using rule 6 (expression -> expression PLUS expression .)
+    MINUS           reduce using rule 6 (expression -> expression PLUS expression .)
+    $end            reduce using rule 6 (expression -> expression PLUS expression .)
+    SB_CLOSE        reduce using rule 6 (expression -> expression PLUS expression .)
+    MB_CLOSE        reduce using rule 6 (expression -> expression PLUS expression .)
+    BB_CLOSE        reduce using rule 6 (expression -> expression PLUS expression .)
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! POWER           [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! MULTIPLY        [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! DIVIDE          [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! POWERS          [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! SB_OPEN         [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! MB_OPEN         [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! BB_OPEN         [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! CONSTANTS       [ reduce using rule 6 (expression -> expression PLUS expression .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+
+
+state 34
+
+    (7) expression -> expression MINUS expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    PLUS            reduce using rule 7 (expression -> expression MINUS expression .)
+    MINUS           reduce using rule 7 (expression -> expression MINUS expression .)
+    $end            reduce using rule 7 (expression -> expression MINUS expression .)
+    SB_CLOSE        reduce using rule 7 (expression -> expression MINUS expression .)
+    MB_CLOSE        reduce using rule 7 (expression -> expression MINUS expression .)
+    BB_CLOSE        reduce using rule 7 (expression -> expression MINUS expression .)
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! POWER           [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! MULTIPLY        [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! DIVIDE          [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! POWERS          [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! SB_OPEN         [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! MB_OPEN         [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! BB_OPEN         [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! CONSTANTS       [ reduce using rule 7 (expression -> expression MINUS expression .) ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+
+
+state 35
+
+    (13) expression -> expression SB_OPEN expression . SB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    SB_CLOSE        shift and go to state 42
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 36
+
+    (16) expression -> expression MB_OPEN expression . MB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    MB_CLOSE        shift and go to state 43
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 37
+
+    (19) expression -> expression BB_OPEN expression . BB_CLOSE
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    BB_CLOSE        shift and go to state 44
+    POWER           shift and go to state 13
+    MULTIPLY        shift and go to state 14
+    DIVIDE          shift and go to state 15
+    PLUS            shift and go to state 16
+    MINUS           shift and go to state 17
+    POWERS          shift and go to state 18
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+
+state 38
+
+    (11) expression -> SB_OPEN expression SB_CLOSE . expression
+    (12) expression -> SB_OPEN expression SB_CLOSE .
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    POWER           reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    MULTIPLY        reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    DIVIDE          reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    PLUS            reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    MINUS           reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    POWERS          reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    SB_OPEN         reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    MB_OPEN         reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    BB_OPEN         reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    $end            reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    SB_CLOSE        reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    MB_CLOSE        reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    BB_CLOSE        reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .)
+    ROOT            shift and go to state 5
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+  ! CONSTANTS       [ reduce using rule 12 (expression -> SB_OPEN expression SB_CLOSE .) ]
+  ! MINUS           [ shift and go to state 4 ]
+  ! SB_OPEN         [ shift and go to state 6 ]
+  ! MB_OPEN         [ shift and go to state 7 ]
+  ! BB_OPEN         [ shift and go to state 8 ]
+
+    expression                     shift and go to state 45
+
+state 39
+
+    (14) expression -> MB_OPEN expression MB_CLOSE . expression
+    (15) expression -> MB_OPEN expression MB_CLOSE .
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    POWER           reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    MULTIPLY        reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    DIVIDE          reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    PLUS            reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    MINUS           reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    POWERS          reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    SB_OPEN         reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    MB_OPEN         reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    BB_OPEN         reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    $end            reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    SB_CLOSE        reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    MB_CLOSE        reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    BB_CLOSE        reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .)
+    ROOT            shift and go to state 5
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+  ! CONSTANTS       [ reduce using rule 15 (expression -> MB_OPEN expression MB_CLOSE .) ]
+  ! MINUS           [ shift and go to state 4 ]
+  ! SB_OPEN         [ shift and go to state 6 ]
+  ! MB_OPEN         [ shift and go to state 7 ]
+  ! BB_OPEN         [ shift and go to state 8 ]
+
+    expression                     shift and go to state 46
+
+state 40
+
+    (17) expression -> BB_OPEN expression BB_CLOSE . expression
+    (18) expression -> BB_OPEN expression BB_CLOSE .
+    (3) expression -> . expression POWER expression
+    (4) expression -> . expression MULTIPLY expression
+    (5) expression -> . expression DIVIDE expression
+    (6) expression -> . expression PLUS expression
+    (7) expression -> . expression MINUS expression
+    (8) expression -> . MINUS expression
+    (9) expression -> . ROOT expression
+    (10) expression -> . expression POWERS
+    (11) expression -> . SB_OPEN expression SB_CLOSE expression
+    (12) expression -> . SB_OPEN expression SB_CLOSE
+    (13) expression -> . expression SB_OPEN expression SB_CLOSE
+    (14) expression -> . MB_OPEN expression MB_CLOSE expression
+    (15) expression -> . MB_OPEN expression MB_CLOSE
+    (16) expression -> . expression MB_OPEN expression MB_CLOSE
+    (17) expression -> . BB_OPEN expression BB_CLOSE expression
+    (18) expression -> . BB_OPEN expression BB_CLOSE
+    (19) expression -> . expression BB_OPEN expression BB_CLOSE
+    (20) expression -> . INT
+    (21) expression -> . FLOAT
+    (22) expression -> . CONSTANTS
+    (23) expression -> . expression CONSTANTS
+    (24) expression -> . FUNCTIONS expression
+    (25) expression -> . FUNCTIONS POWERS expression
+
+    POWER           reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    MULTIPLY        reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    DIVIDE          reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    PLUS            reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    MINUS           reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    POWERS          reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    SB_OPEN         reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    MB_OPEN         reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    BB_OPEN         reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    $end            reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    SB_CLOSE        reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    MB_CLOSE        reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    BB_CLOSE        reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .)
+    ROOT            shift and go to state 5
+    INT             shift and go to state 9
+    FLOAT           shift and go to state 10
+    CONSTANTS       shift and go to state 11
+    FUNCTIONS       shift and go to state 12
+
+  ! CONSTANTS       [ reduce using rule 18 (expression -> BB_OPEN expression BB_CLOSE .) ]
+  ! MINUS           [ shift and go to state 4 ]
+  ! SB_OPEN         [ shift and go to state 6 ]
+  ! MB_OPEN         [ shift and go to state 7 ]
+  ! BB_OPEN         [ shift and go to state 8 ]
+
+    expression                     shift and go to state 47
+
+state 41
+
+    (25) expression -> FUNCTIONS POWERS expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    MULTIPLY        reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    DIVIDE          reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    PLUS            reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    MINUS           reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    POWERS          reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    $end            reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    SB_CLOSE        reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    MB_CLOSE        reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    BB_CLOSE        reduce using rule 25 (expression -> FUNCTIONS POWERS expression .)
+    SB_OPEN         shift and go to state 19
+    MB_OPEN         shift and go to state 20
+    BB_OPEN         shift and go to state 21
+    CONSTANTS       shift and go to state 22
+
+  ! SB_OPEN         [ reduce using rule 25 (expression -> FUNCTIONS POWERS expression .) ]
+  ! MB_OPEN         [ reduce using rule 25 (expression -> FUNCTIONS POWERS expression .) ]
+  ! BB_OPEN         [ reduce using rule 25 (expression -> FUNCTIONS POWERS expression .) ]
+  ! CONSTANTS       [ reduce using rule 25 (expression -> FUNCTIONS POWERS expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+
+
+state 42
+
+    (13) expression -> expression SB_OPEN expression SB_CLOSE .
+
+    POWER           reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    MULTIPLY        reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    DIVIDE          reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    PLUS            reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    MINUS           reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    POWERS          reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    SB_OPEN         reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    MB_OPEN         reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    BB_OPEN         reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    CONSTANTS       reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    $end            reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    SB_CLOSE        reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    MB_CLOSE        reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+    BB_CLOSE        reduce using rule 13 (expression -> expression SB_OPEN expression SB_CLOSE .)
+
+
+state 43
+
+    (16) expression -> expression MB_OPEN expression MB_CLOSE .
+
+    POWER           reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    MULTIPLY        reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    DIVIDE          reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    PLUS            reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    MINUS           reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    POWERS          reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    SB_OPEN         reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    MB_OPEN         reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    BB_OPEN         reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    CONSTANTS       reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    $end            reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    SB_CLOSE        reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    MB_CLOSE        reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+    BB_CLOSE        reduce using rule 16 (expression -> expression MB_OPEN expression MB_CLOSE .)
+
+
+state 44
+
+    (19) expression -> expression BB_OPEN expression BB_CLOSE .
+
+    POWER           reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    MULTIPLY        reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    DIVIDE          reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    PLUS            reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    MINUS           reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    POWERS          reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    SB_OPEN         reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    MB_OPEN         reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    BB_OPEN         reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    CONSTANTS       reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    $end            reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    SB_CLOSE        reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    MB_CLOSE        reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+    BB_CLOSE        reduce using rule 19 (expression -> expression BB_OPEN expression BB_CLOSE .)
+
+
+state 45
+
+    (11) expression -> SB_OPEN expression SB_CLOSE expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    MULTIPLY        reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    DIVIDE          reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    PLUS            reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    MINUS           reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    POWERS          reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    SB_OPEN         reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    MB_OPEN         reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    BB_OPEN         reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    $end            reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    SB_CLOSE        reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    MB_CLOSE        reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    BB_CLOSE        reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .)
+    CONSTANTS       shift and go to state 22
+
+  ! CONSTANTS       [ reduce using rule 11 (expression -> SB_OPEN expression SB_CLOSE expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+  ! SB_OPEN         [ shift and go to state 19 ]
+  ! MB_OPEN         [ shift and go to state 20 ]
+  ! BB_OPEN         [ shift and go to state 21 ]
+
+
+state 46
+
+    (14) expression -> MB_OPEN expression MB_CLOSE expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    MULTIPLY        reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    DIVIDE          reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    PLUS            reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    MINUS           reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    POWERS          reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    SB_OPEN         reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    MB_OPEN         reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    BB_OPEN         reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    $end            reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    SB_CLOSE        reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    MB_CLOSE        reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    BB_CLOSE        reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .)
+    CONSTANTS       shift and go to state 22
+
+  ! CONSTANTS       [ reduce using rule 14 (expression -> MB_OPEN expression MB_CLOSE expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+  ! SB_OPEN         [ shift and go to state 19 ]
+  ! MB_OPEN         [ shift and go to state 20 ]
+  ! BB_OPEN         [ shift and go to state 21 ]
+
+
+state 47
+
+    (17) expression -> BB_OPEN expression BB_CLOSE expression .
+    (3) expression -> expression . POWER expression
+    (4) expression -> expression . MULTIPLY expression
+    (5) expression -> expression . DIVIDE expression
+    (6) expression -> expression . PLUS expression
+    (7) expression -> expression . MINUS expression
+    (10) expression -> expression . POWERS
+    (13) expression -> expression . SB_OPEN expression SB_CLOSE
+    (16) expression -> expression . MB_OPEN expression MB_CLOSE
+    (19) expression -> expression . BB_OPEN expression BB_CLOSE
+    (23) expression -> expression . CONSTANTS
+
+    POWER           reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    MULTIPLY        reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    DIVIDE          reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    PLUS            reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    MINUS           reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    POWERS          reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    SB_OPEN         reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    MB_OPEN         reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    BB_OPEN         reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    $end            reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    SB_CLOSE        reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    MB_CLOSE        reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    BB_CLOSE        reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .)
+    CONSTANTS       shift and go to state 22
+
+  ! CONSTANTS       [ reduce using rule 17 (expression -> BB_OPEN expression BB_CLOSE expression .) ]
+  ! POWER           [ shift and go to state 13 ]
+  ! MULTIPLY        [ shift and go to state 14 ]
+  ! DIVIDE          [ shift and go to state 15 ]
+  ! PLUS            [ shift and go to state 16 ]
+  ! MINUS           [ shift and go to state 17 ]
+  ! POWERS          [ shift and go to state 18 ]
+  ! SB_OPEN         [ shift and go to state 19 ]
+  ! MB_OPEN         [ shift and go to state 20 ]
+  ! BB_OPEN         [ shift and go to state 21 ]
+
